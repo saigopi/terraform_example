@@ -6,12 +6,14 @@ pipeline {
         stage('Demo') {
             steps {
                 sh "docker build -t generali-backend -f Dockerfile ."
+                sh "docker images"
             //    dockerfile {
             //        filename 'Dockerfile.build'
             //        dir 'build'
             //        label 'my-defined-label'
             //        additionalBuildArgs  '--build-arg version=1.0.2'
             //        args '-v /tmp:/tmp'
+            //
             }             
         }
     }
