@@ -4,7 +4,13 @@ pipeline {
     //     label 'docker-slave-c96d38a2dff0' 
     stages {
         stage('Demo') {
-            step([$class: 'DockerBuilderPublisher', cleanImages: false, cleanupWithJenkinsJobDelete: false, cloud: '', dockerFileDirectory: '.', fromRegistry: [], pushCredentialsId: '', pushOnSuccess: false, tagsString: ''])               
+            dockerfile {
+                filename 'Dockerfile.build'
+                dir 'build'
+                label 'my-defined-label'
+                additionalBuildArgs  '--build-arg version=1.0.2'
+                args '-v /tmp:/tmp'
+            }             
         }
     }
 }
