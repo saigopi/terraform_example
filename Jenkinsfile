@@ -7,8 +7,7 @@ pipeline {
             steps {
                 dockerfile {
                     filename 'Dockerfile'
-                    dir 'build'
-                }
+                    dir 'build'                
                 }
            }
         }
