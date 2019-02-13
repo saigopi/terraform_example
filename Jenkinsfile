@@ -6,7 +6,7 @@ pipeline {
         stage('Demo') {
             step([$class: 'DockerBuilderPublisher', cleanImages: false, cleanupWithJenkinsJobDelete: false, cloud: '', dockerFileDirectory: '.', fromRegistry: [], pushCredentialsId: '', pushOnSuccess: false, tagsString: ''])               
         }
-           }
-        }
     }
 }
+
+
